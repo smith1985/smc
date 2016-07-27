@@ -12,9 +12,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("666")
-        print("666")
-        print("666")
+        print("sfdfa")
         // Do any additional setup after loading the view, typically from a nib.
     }
 
