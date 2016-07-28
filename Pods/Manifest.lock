@@ -1,0 +1,36 @@
+PODS:
+  - Alamofire (3.4.1)
+  - AwesomeCache (3.0.1)
+  - FDFullscreenPopGesture (1.1)
+  - Kingfisher (2.4.2)
+  - NVActivityIndicatorView (2.9)
+  - RxSwift (2.6.0)
+  - SKPhotoBrowser (2.0.1)
+  - SnapKit (0.21.1)
+  - SwiftyJSON (2.3.2)
+
+DEPENDENCIES:
+  - Alamofire
+  - AwesomeCache
+  - FDFullscreenPopGesture
+  - Kingfisher
+  - NVActivityIndicatorView
+  - RxSwift
+  - SKPhotoBrowser
+  - SnapKit
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  AwesomeCache: a1561c926b6cf812c5f3f4262ea22e20bf8323c1
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  Kingfisher: 05bf8d04408aaa70fcd2c8c81b9f1d0f1ad313dd
+  NVActivityIndicatorView: 0084f6be71bdf4735b5424ebfb530b1e3db3276c
+  RxSwift: 77f3a0b15324baa7a1c9bfa9f199648a82424e26
+  SKPhotoBrowser: 8d2dd1c476c8e01226f885e2ba581a4601a1cdf1
+  SnapKit: bbad04cb016c7cead63965f16b00c09318d271ee
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+
+PODFILE CHECKSUM: f64672aad569453e2b7cb80589d8e15c5fefc22e
+
+COCOAPODS: 1.0.1
