@@ -14,6 +14,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         print("发生2")
         // Do any additional setup after loading the view, typically from a nib.
+        
+                let url="4/news/latest"
+        
+                ZFNetworkTool.get(url, params: nil, success: { (json) -> Void in
+                    print(json)
+                }) { (error) -> Void in
+                    print(error)
+                }
     }
 
     override func didReceiveMemoryWarning() {
