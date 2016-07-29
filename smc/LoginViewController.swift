@@ -19,6 +19,8 @@ class LoginViewController: UIViewController {
         txt_Pwd.delegate=self
         txt_loginName.delegate=self
         
+        print()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,20 +51,21 @@ class LoginViewController: UIViewController {
         }
         
         
-//        let url="4/news/latest"
-//        ZFNetworkTool.get(
-//            url
-//            , params: nil
-//            , success: {
-//                (json) -> Void in
-//                print(json)
-//            }
-//            )
-//        {
-//            //尾随闭包，也就是最后一个参数。
-//            (error) -> Void in
-//            print(error)
-//        }
+        let url="http://192.168.200.30:8088/smartcampusv2-web/api/login/do"
+        let m = ZFNetworkTool.post(
+            url
+            , params: ["loginId" : "test", "password" : "123"]
+            , success: {
+                (json) -> Void in
+                print(json)
+            }
+            )
+        {
+            //尾随闭包，也就是最后一个参数。
+            (error) -> Void in
+            print(error)
+        }
+        print(m)
     }
     
     

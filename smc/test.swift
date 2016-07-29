@@ -30,6 +30,7 @@ class ZFNetworkTool: NSObject {
                     success(json: JSON)
                 }
             })
+            
         }else {
             Alamofire.request(.GET, httpUrl).responseJSON { (response) -> Void in
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
@@ -51,14 +52,16 @@ class ZFNetworkTool: NSObject {
     
     static func post(url : String, params : [String : AnyObject]?, success:(json : Any) -> Void , fail:(error : Any) -> Void) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        let httpUrl : String = BASE_URL + url
+        let httpUrl : String =   url
         if let parameters = params {
-            Alamofire.request(.POST, httpUrl, parameters: parameters, encoding: .JSON, headers: nil).responseJSON(completionHandler: { (response) -> Void in
+            let m = Alamofire.request(.POST, httpUrl, parameters: parameters, encoding: .JSON, headers: nil)
+                .responseJSON(completionHandler: { (response) -> Void in
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                 if let JSON = response.result.value {
                     success(json: JSON)
                 }
             })
+            print(m)
         }else {
             Alamofire.request(.POST, httpUrl).responseJSON { (response) -> Void in
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
