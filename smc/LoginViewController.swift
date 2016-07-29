@@ -28,6 +28,24 @@ class LoginViewController: UIViewController {
         txt_loginName.resignFirstResponder()
         txt_Pwd.resignFirstResponder()
     }
+    //登陆
+    @IBAction func LoginBtn_Click(sender: AnyObject) {
+        let url="4/news/latest"
+        ZFNetworkTool.get(
+            url
+            , params: nil
+            , success: {
+                (json) -> Void in
+                print(json)
+            }
+            )
+        {
+            //尾随闭包，也就是最后一个参数。
+            (error) -> Void in
+            print(error)
+        }
+    }
+    
     
 }
 
