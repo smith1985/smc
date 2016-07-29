@@ -19,8 +19,8 @@ class ZFNetworkTool: NSObject {
      *   success : 请求成功回调函数
      *   fail : 请求失败回调函数
      */
-    
-    static func get( url : String, params :[String : AnyObject]?, success :(json : AnyObject) -> Void , fail:(error : Any) -> Void) {
+    		
+    static func get( url : String, params :[String : AnyObject]?, success :(json : AnyObject) -> Void , fail:(error : Any) -> Void){
         let httpUrl : String = BASE_URL + url
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         if let parameters = params {

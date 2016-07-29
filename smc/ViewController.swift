@@ -15,13 +15,20 @@ class ViewController: UIViewController {
         print("发生2")
         // Do any additional setup after loading the view, typically from a nib.
         
-                let url="4/news/latest"
-        
-                ZFNetworkTool.get(url, params: nil, success: { (json) -> Void in
-                    print(json)
-                }) { (error) -> Void in
-                    print(error)
-                }
+        let url="4/news/latest"
+        ZFNetworkTool.get(
+            url
+            , params: nil
+            , success: {
+                (json) -> Void in
+                print(json)
+            }
+        )
+        {
+            //尾随闭包，也就是最后一个参数。
+            (error) -> Void in
+            print(error)
+        }
     }
 
     override func didReceiveMemoryWarning() {

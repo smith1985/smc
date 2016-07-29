@@ -1,10 +1,63 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8jb-2B-Y1r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="brN-vz-4fB">
+            <objects>
+                <viewController id="8jb-2B-Y1r" customClass="LoginViewController" customModule="smc" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vn8-Ce-imC"/>
+                        <viewControllerLayoutGuide type="bottom" id="NGY-j4-gLe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GaU-rd-V4d">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JYo-yP-MOv">
+                                <rect key="frame" x="20" y="235" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p9K-Po-q0F">
+                                <rect key="frame" x="20" y="295" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IsG-yD-4Bl">
+                                <rect key="frame" x="20" y="359" width="280" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="登录">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IsG-yD-4Bl" firstAttribute="trailing" secondItem="p9K-Po-q0F" secondAttribute="trailing" id="1wk-eu-S4e"/>
+                            <constraint firstItem="JYo-yP-MOv" firstAttribute="trailing" secondItem="p9K-Po-q0F" secondAttribute="trailing" id="BHA-8b-XXh"/>
+                            <constraint firstItem="JYo-yP-MOv" firstAttribute="leading" secondItem="p9K-Po-q0F" secondAttribute="leading" id="LI7-8Y-q6t"/>
+                            <constraint firstItem="IsG-yD-4Bl" firstAttribute="leading" secondItem="p9K-Po-q0F" secondAttribute="leading" id="S15-Kc-I3m"/>
+                            <constraint firstItem="JYo-yP-MOv" firstAttribute="leading" secondItem="GaU-rd-V4d" secondAttribute="leadingMargin" constant="4" id="aKz-ck-whs"/>
+                            <constraint firstItem="IsG-yD-4Bl" firstAttribute="top" secondItem="p9K-Po-q0F" secondAttribute="bottom" constant="34" id="aLx-3r-Zx1"/>
+                            <constraint firstItem="JYo-yP-MOv" firstAttribute="top" secondItem="Vn8-Ce-imC" secondAttribute="bottom" constant="215" id="dtI-Km-9hC"/>
+                            <constraint firstItem="p9K-Po-q0F" firstAttribute="top" secondItem="JYo-yP-MOv" secondAttribute="bottom" constant="30" id="e3Z-Md-9hs"/>
+                            <constraint firstItem="JYo-yP-MOv" firstAttribute="centerX" secondItem="GaU-rd-V4d" secondAttribute="centerX" id="fQj-aQ-8kf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="txt_Pwd" destination="p9K-Po-q0F" id="BFj-Uu-vLe"/>
+                        <outlet property="txt_loginName" destination="JYo-yP-MOv" id="psO-cu-y61"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ULG-pr-lyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-278" y="503"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -21,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="162.66666666666666" y="336.54000000000002"/>
+            <point key="canvasLocation" x="62" y="503"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="cE5-l2-qya">
