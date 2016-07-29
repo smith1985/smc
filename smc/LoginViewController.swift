@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
  
         if txt_loginName.text!.isEmpty{
             
-            let alertController = UIAlertController(title: "提示", message:"请输入用户名", preferredStyle: UIAlertControllerStyle.Alert)
+            let alertController = UIAlertController(title: "提示", message:"请输入用户名!", preferredStyle: UIAlertControllerStyle.Alert)
             alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
             self.presentViewController(alertController, animated: true, completion: nil)
             return
@@ -42,7 +42,7 @@ class LoginViewController: UIViewController {
         
         if txt_Pwd.text!.isEmpty{
             
-            let alertController = UIAlertController(title: "提示", message:"请输入密码", preferredStyle: UIAlertControllerStyle.Alert)
+            let alertController = UIAlertController(title: "提示", message:"请输入密码!", preferredStyle: UIAlertControllerStyle.Alert)
             alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
             self.presentViewController(alertController, animated: true, completion: nil)
             return
