@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 let BASE_URL : String = "http://news-at.zhihu.com/api/"
 class ZFNetworkTool: NSObject {
@@ -21,10 +22,10 @@ class ZFNetworkTool: NSObject {
      */
     		
     static func get( url : String, params :[String : AnyObject]?, success :(json : AnyObject) -> Void , fail:(error : Any) -> Void){
-        let httpUrl : String = BASE_URL + url
+        let httpUrl : String =  url
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         if let parameters = params {
-            Alamofire.request(.GET, httpUrl, parameters: parameters , encoding: .JSON, headers: nil).responseJSON(completionHandler: { (response) -> Void in
+            Alamofire.request(.GET, httpUrl, parameters: parameters , encoding: .URL, headers: nil).responseJSON(completionHandler: { (response) -> Void in
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                 if let JSON = response.result.value {
                     success(json: JSON)
@@ -32,12 +33,13 @@ class ZFNetworkTool: NSObject {
             })
             
         }else {
-            Alamofire.request(.GET, httpUrl).responseJSON { (response) -> Void in
+            let m = Alamofire.request(.GET, httpUrl).responseJSON { (response) -> Void in
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                 if let JSON = response.result.value {
                     success(json: JSON)
                 }
             }
+            debugPrint(m)
             
         }
     }
@@ -50,23 +52,25 @@ class ZFNetworkTool: NSObject {
      *   fail : 请求失败回调函数
      */
     
-    static func post(url : String, params : [String : AnyObject]?, success:(json : Any) -> Void , fail:(error : Any) -> Void) {
+    static func post(url : String, params : [String : AnyObject]?, success:(json : JSON) -> Void , fail:(error : Any) -> Void) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         let httpUrl : String =   url
         if let parameters = params {
-            let m = Alamofire.request(.POST, httpUrl, parameters: parameters, encoding: .JSON, headers: nil)
+             Alamofire.request(.POST, httpUrl, parameters: parameters, encoding: .URL, headers: nil)
                 .responseJSON(completionHandler: { (response) -> Void in
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                if let JSON = response.result.value {
-                    success(json: JSON)
+                if let rs = response.result.value {
+                    let rs2 = JSON(rs)
+                    success(json: rs2)
                 }
             })
-            print(m)
         }else {
             Alamofire.request(.POST, httpUrl).responseJSON { (response) -> Void in
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                if let JSON = response.result.value {
-                    success(json: JSON)
+                if let rs = response.result.value {
+                    let rs2 = JSON(rs)
+
+                    success(json: rs2)
                 }
             }
             
