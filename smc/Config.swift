@@ -7,3 +7,6 @@
 //
 
 import Foundation
+enum URLConfig:String{
+    case domain = "http://sdfz.qlteacher.com"
+}

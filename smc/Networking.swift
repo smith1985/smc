@@ -30,7 +30,7 @@ import SwiftyJSON
      *   fail : 请求失败回调函数
      */
     
-   static func get( url : String, params :[String : AnyObject]?, success :(json : AnyObject) -> Void , fail:(error : Any) -> Void){
+   static func get( url : String, params :[String : AnyObject]?, success :(json : JSON) -> Void , fail:(error : Any) -> Void){
     
         let httpUrl : String =  url
          UIApplication.sharedApplication().networkActivityIndicatorVisible = true
@@ -38,8 +38,9 @@ import SwiftyJSON
             Alamofire.request(.GET, httpUrl, parameters: parameters , encoding: .URL, headers: nil)
                 .responseJSON(completionHandler: { (response) -> Void in
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                    if let JSON = response.result.value {
-                        success(json: JSON)
+                    if let rs = response.result.value {
+                        let rs2 = JSON(rs)
+                        success(json: rs2)
                     }
                 })
             
@@ -47,8 +48,9 @@ import SwiftyJSON
             Alamofire.request(.GET, httpUrl)
                 .responseJSON { (response) -> Void in
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                    if let JSON = response.result.value {
-                        success(json: JSON)
+                    if let rs = response.result.value {
+                        let rs2 = JSON(rs)
+                        success(json: rs2)
                     }
             }
             
