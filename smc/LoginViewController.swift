@@ -56,7 +56,7 @@ class LoginViewController: UIViewController {
             return
         }
         viewModel.login(
-            ["loginId" : "test", "password" : "123"],
+            ["loginId" : txt_loginName.text!, "password" : txt_Pwd.text!],
             success: {(json) -> Void in
                 print(json["data"]["name"])
                 //获取当前登录用户
