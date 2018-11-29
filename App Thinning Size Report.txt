@@ -1,0 +1,8 @@
+
+App Thinning Size Report for All Variants of mhc
+
+Variant: mhc-8FC4C535-F1C9-454F-B1A6-EC90D4FF718E.ipa
+Supported variant descriptors: [device: iPhone10,3, os-version: 12], [device: iPhone11,4, os-version: 12], [device: iPhone9,2, os-version: 12], [device: iPhone10,2, os-version: 12], [device: iPhone10,5, os-version: 12], [device: iPhone9,4, os-version: 12], [device: iPhone10,6, os-version: 12], [device: iPhone11,2, os-version: 12], and [device: iPhone11,6, os-version: 12]
+App + On Demand Resources size: 3.2 MB compressed, 15.6 MB uncompressed
+App size: 3.2 MB compressed, 15.6 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>compileBitcode</key>
+	<true/>
+	<key>destination</key>
+	<string>export</string>
+	<key>manifest</key>
+	<dict>
+		<key>appURL</key>
+		<string>https://github.com/smith1985/smc/mhc.ipa</string>
+		<key>displayImageURL</key>
+		<string>https://github.com/smith1985/smc/mhc57.png</string>
+		<key>fullSizeImageURL</key>
+		<string>https://github.com/smith1985/smc/mhc512.png</string>
+	</dict>
+	<key>method</key>
+	<string>ad-hoc</string>
+	<key>provisioningProfiles</key>
+	<dict>
+		<key>com.newxyz.mhc</key>
+		<string>ad_mhc</string>
+	</dict>
+	<key>signingCertificate</key>
+	<string>iPhone Distribution</string>
+	<key>signingStyle</key>
+	<string>manual</string>
+	<key>stripSwiftSymbols</key>
+	<true/>
+	<key>teamID</key>
+	<string>T84R22E6E5</string>
+	<key>thinning</key>
+	<string>iPhone11,4</string>
+</dict>
+</plist>
